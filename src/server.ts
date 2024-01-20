@@ -1,7 +1,7 @@
 // Entry point for Express Server
 import express from "express";
 import { getPayloadClient } from "./get-payload";
-import { nextApp, nextHandler } from "./next-utils";
+import { nextHandler, nextApp } from "./next-utils";
 import * as trpcExpress from "@trpc/server/adapters/express";
 import { appRouter } from "./trpc";
 
@@ -14,7 +14,9 @@ const createContext = ({
 }: trpcExpress.CreateExpressContextOptions) => ({
   req,
   res
-})
+});
+
+export type ExpressContext = Awaited<ReturnType<typeof createContext>>
 
 const start = async () => {
   const payload = await getPayloadClient({

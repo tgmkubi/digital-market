@@ -23,7 +23,7 @@ export default buildConfig({
     meta: {
       titleSuffix: "- DigitalHippo",
       favicon: "/favicon.ico",
-      ogImage: "/thumvnail.jpg",
+      ogImage: "/thumbnail.jpg",
     },
   },
   rateLimit: {
